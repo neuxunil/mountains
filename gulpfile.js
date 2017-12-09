@@ -12,33 +12,33 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
 const paths = {
-    root: './build',
+    root: './dist',
     templates: {
         pages: 'src/templates/pages/*.pug',
         src: 'src/templates/**/*.pug'
     },
     styles: {
         src: 'src/scss/**/*.scss',
-        dest: 'build/assets/css/'
+        dest: 'dist/assets/css/'
     },
     images: {
         src: 'src/images/**/*.*',
-        dest: 'build/assets/images/'
+        dest: 'dist/assets/images/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
-        dest: 'build/assets/js/'
+        dest: 'dist/assets/js/'
     }
 }
 
-// PUG
+// Pug
 function templates() {
     return gulp.src(paths.templates.pages)
         .pipe(pug({ pretty: true }))
         .pipe(gulp.dest(paths.root));
 }
 
-// SCSS
+// Scss
 function styles() {
     return gulp.src('./src/styles/main.scss')
         .pipe(sourcemaps.init())
@@ -49,14 +49,14 @@ function styles() {
         .pipe(gulp.dest(paths.styles.dest))
 }
 
-// Удаление папки  dist
+// Удаление папки dist
 function clean() {
     return del(paths.root);
 }
 
-// WEBPACk
+// Webpack
 function scripts() {
-    return gulp.src('src/scripts/*.js')
+    return gulp.src('./src/scripts/*.js')
         .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 }
