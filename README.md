@@ -27,5 +27,3 @@ npm i
 ##### Запустить сборку проекта
 ```
 gulp
-
-**GitHub Pages:** https://neuxunil.github.io/mountains/
