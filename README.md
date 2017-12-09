@@ -1,4 +1,4 @@
-# Сайт-портфолио
+# Сайтпортфолио
 
 > Автор: Олизаревич Сергей
 
@@ -10,7 +10,7 @@
 
 ##### Склонировать репозиторий и перейти в папку проекта
 ```
-git clone git@github.com:igosheva/LoftPortfolio.git
+git clone git@github.com:neuxunil/mountains.git
 cd mountains
 ```
 
