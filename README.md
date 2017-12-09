@@ -4,7 +4,7 @@
 
 > В сборке использованы Gulp 4.0, Webpack 3.10
 
-> GitHub Pages:** https://neuxunil.github.io/mountains/
+> GitHub Pages:** https://neuxunil.github.io/mountains/dist
 
 ## Начало проекта
 
