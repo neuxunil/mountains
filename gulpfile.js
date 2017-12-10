@@ -18,7 +18,7 @@ const paths = {
         src: 'src/templates/**/*.pug'
     },
     styles: {
-        src: 'src/scss/**/*.scss',
+        src: 'src/styles/**/*.scss',
         dest: 'dist/assets/css/'
     },
     images: {
@@ -42,8 +42,8 @@ function templates() {
 function styles() {
     return gulp.src('./src/styles/main.scss')
         .pipe(sourcemaps.init())
+        .pipe(autoprefixer('last 2 versions', '1%', 'ie 9'))
         .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(paths.styles.dest))
@@ -86,6 +86,7 @@ function images() {
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
+exports.server = server;
 exports.images = images;
 
 gulp.task('default', gulp.series(
